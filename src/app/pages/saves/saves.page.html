@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>saves</ion-title>
+    <ion-title>Saves</ion-title>
+    <ion-buttons slot="end" (click)="logoutService.handleLogout()">
+      <app-logout></app-logout>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

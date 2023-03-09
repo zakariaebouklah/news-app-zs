@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {LogoutService} from "../../services/logout.service";
+import {StateService} from "../../services/state.service";
 
 @Component({
   selector: 'app-saves',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SavesPage implements OnInit {
 
-  constructor() { }
+  constructor(public logoutService: LogoutService, private stateService: StateService) { }
 
   ngOnInit() {
+    this.stateService.handleAuthStateChanged()
   }
 
 }

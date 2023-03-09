@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>feed</ion-title>
+    <ion-title>Feed</ion-title>
+    <ion-buttons slot="end" (click)="logoutService.handleLogout()">
+      <app-logout></app-logout>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

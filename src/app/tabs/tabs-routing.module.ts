@@ -41,6 +41,9 @@ const routes: Routes = [
     ],
   },
 ];
+
+//old routing
+
 /*const routes: Routes = [
   {
     path: 'tabs',

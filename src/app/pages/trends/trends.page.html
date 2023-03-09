@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>trends</ion-title>
+    <ion-title>Trends</ion-title>
+    <ion-buttons slot="end" (click)="logoutService.handleLogout()">
+      <app-logout></app-logout>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

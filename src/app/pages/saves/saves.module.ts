@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { SavesPageRoutingModule } from './saves-routing.module';
 
 import { SavesPage } from './saves.page';
+import {HomePageModule} from "../home/home.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    SavesPageRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        SavesPageRoutingModule,
+        HomePageModule
+    ],
   declarations: [SavesPage]
 })
 export class SavesPageModule {}
