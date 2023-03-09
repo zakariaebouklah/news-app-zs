@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="login-box">
+ 
+    <div class="err" *ngIf="error !== ''">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Validation</ion-card-title>
+          <ion-card-subtitle>Authentication Error</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{error}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <form #itemForm="ngForm" method="post" (ngSubmit)="handleLogin($event)">
+      <div class="user-box">
+        <input [(ngModel)]="user.email" type="email" name="email" required>
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input [(ngModel)]="user.password" type="password" name="password" required>
+        <label>Password</label>
+      </div>
+      <button type="submit">
+             Sign in
+         <span></span>
+      </button>
+    </form>
+  </div>
+</ion-content>
