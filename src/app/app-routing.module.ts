@@ -20,6 +20,22 @@ const routes: Routes = [
     redirectTo: 'register',
     pathMatch: 'full'
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'feed',
+    loadChildren: () => import('./pages/feed/feed.module').then( m => m.FeedPageModule)
+  },
+  {
+    path: 'trends',
+    loadChildren: () => import('./pages/trends/trends.module').then( m => m.TrendsPageModule)
+  },
+  {
+    path: 'saves',
+    loadChildren: () => import('./pages/saves/saves.module').then( m => m.SavesPageModule)
+  },
 ];
 @NgModule({
   imports: [
