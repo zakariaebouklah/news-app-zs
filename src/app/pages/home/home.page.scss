@@ -1,0 +1,51 @@
+.container {
+  margin: 35px 45px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+
+.rnd-everything {
+  background: #54b862;
+}
+
+.rnd-trends {
+  background: #ff7a00;
+}
+
+.rnd-sources {
+  background: #021639;
+}
+
+h3 {
+  margin: 0px 45px;
+}
+
+select {
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 35px 0px;
+}
+
+ion-card {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 150px 100px;
+  align-items: center;
+}
+
+.head-trend{
+  display: flex;
+  justify-content: flex-start;
+}

@@ -11,7 +11,8 @@ export const environment = {
     storageBucket: process.env.NG_APP_BUCKET_ID,
     messagingSenderId: process.env.NG_APP_MESSAGING_ID,
     appId: process.env.NG_APP_APP_ID
-  }
+  },
+  newsKey: process.env.NG_APP_NEWS_KEY
 };
 
 /*

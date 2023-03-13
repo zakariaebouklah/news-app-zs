@@ -9,4 +9,114 @@
 
 <ion-content>
 
+  <div class="wrapper">
+
+    <h3>World Wide News 🌍</h3>
+
+    <div class="container" [ngClass]="'rnd-everything'">
+      <ion-card *ngFor="let article of randomArticles">
+        <img
+          alt="Silhouette of mountains"
+          [src]="article.urlToImage" height="200px" width="500px"/>
+        <div>
+          <ion-card-header>
+            <ion-card-title>{{article.title}}</ion-card-title>
+            <ion-card-subtitle>{{article.author}}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            <div>{{article.description}}</div>
+            <a [href]="article.url" target="_blank">Read More...</a>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <div class="head-trend">
+      <h3>Top Headlines 📈</h3>
+
+      <select name="dropdown" id="dd" (change)="handleChanges()" [(ngModel)]="country">
+        <option value="ma" [defaultSelected]="true">Morocco</option>
+        <option value="eg">Egypt</option>
+        <option value="my">Malaysia</option>
+        <option value="sg">Singapore</option>
+        <option value="sa">Saudi Arabia</option>
+        <option value="tr">Turkey</option>
+        <option value="ae">UAE</option>
+        <option value="kr">South Korea</option>
+        <option value="jp">Japan</option>
+        <option value="mx">Mexico</option>
+        <option value="cu">Cuba</option>
+        <option value="de">Germany</option>
+        <option value="cn">China</option>
+        <option value="ve">Venezuela</option>
+        <option value="ie">Ireland</option>
+        <option value="nz">New Zealand</option>
+        <option value="au">Australia</option>
+        <option value="ar">Argentina</option>
+        <option value="ng">Nigeria</option>
+        <option value="hk">Hong Kong</option>
+        <option value="in">India</option>
+        <option value="id">Indonesia</option>
+        <option value="ph">Philippines</option>
+        <option value="tw">Taiwan</option>
+        <option value="bg">Bulgaria</option>
+        <option value="th">Thailand</option>
+        <option value="ca">Canada</option>
+        <option value="co">Colombia</option>
+        <option value="pt">Portugal</option>
+        <option value="ch">Switzerland</option>
+        <option value="hu">Hungary</option>
+        <option value="br">Brazil</option>
+        <option value="at">Austria</option>
+        <option value="uk">UK</option>
+        <option value="us">USA</option>
+        <option value="it">Italy</option>
+        <option value="fr">France</option>
+        <option value="nl">Netherlands</option>
+      </select>
+    </div>
+    <div class="container" [ngClass]="'rnd-trends'">
+      <ion-card *ngFor="let trend of trends">
+        <img
+          *ngIf="trend.urlToImage !== null"
+          alt="Silhouette of mountains"
+          [src]="trend.urlToImage" height="200px" width="500px"/>
+        <div>
+          <ion-card-header>
+            <ion-card-title>{{trend.title}}</ion-card-title>
+            <ion-card-subtitle>{{trend.author}}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            <div>
+              <p>{{trend.source.name}}</p>
+              <p>{{trend.publishedAt}}</p>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <p><a [href]="trend.url" target="_blank">Read More...</a></p>
+            </div>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <h3>Our Sources 📰</h3>
+
+    <div class="container" [ngClass]="'rnd-sources'">
+      <ion-card *ngFor="let source of allSources">
+        <div>
+          <ion-card-header>
+            <ion-card-title>{{source.name}}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <div>{{source.description}}</div>
+            <a [href]="source.url" target="_blank">Go To source...</a>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+
 </ion-content>

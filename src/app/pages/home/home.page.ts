@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LogoutService} from "../../services/logout.service";
 import {StateService} from "../../services/state.service";
+import {HomeService} from "../../services/api/home.service";
+import {Article} from "../../models/article";
+import {Source} from "../../models/source";
+import {Trend} from "../../models/trend";
 
 @Component({
   selector: 'app-home',
@@ -9,10 +13,48 @@ import {StateService} from "../../services/state.service";
 })
 export class HomePage implements OnInit {
 
-  constructor(public logoutService: LogoutService, private stateService: StateService) { }
+  randomArticles: Article[] = []
+
+  allSources: Source[] = []
+
+  country: string = this.homeService.country
+  trends: Trend[] = []
+
+  constructor(
+    public logoutService: LogoutService,
+    private stateService: StateService,
+    public homeService: HomeService
+  )
+  { }
 
   ngOnInit(): void {
+
     this.stateService.handleAuthStateChanged()
+
+    // @ts-ignore
+    this.homeService.getGeneralFeed().subscribe(({articles}) => {
+        this.randomArticles = articles
+    })
+
+    // @ts-ignore
+    this.homeService.getAllSources().subscribe(({sources}) => {
+      this.allSources = sources
+    })
+
+    // @ts-ignore
+    this.homeService.getTrendsByCountry().subscribe(({articles}) => {
+      this.trends = articles
+    })
+
+  }
+
+  handleChanges()
+  {
+    // @ts-ignore
+    this.homeService.getTrendsAfterChanges(this.country).subscribe(({articles}) => {
+      console.log(articles)
+      this.trends = articles
+    })
   }
 
 }

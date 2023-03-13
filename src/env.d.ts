@@ -12,6 +12,7 @@ declare namespace NodeJS {
     readonly NG_APP_BUCKET_ID: string;
     readonly NG_APP_MESSAGING_ID: string;
     readonly NG_APP_APP_ID: string;
+    readonly NG_APP_NEWS_KEY: string;
 
     // Add your environment variables below
   }
