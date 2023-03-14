@@ -8,8 +8,12 @@ import {environment} from "../../../environments/environment";
 })
 export class HomeService {
 
-  // apiGeneralFeedUrl: string = `https://newsapi.org/v2/everything?from=2023-03-10&to=2023-03-11&sortBy=popularity&apiKey=${process.env.NG_APP_NEWS_KEY}&q=*`
-  private apiGeneralFeedUrl: string = `https://newsapi.org/v2/everything?from=2023-03-10&to=2023-03-11&sortBy=popularity&apiKey=${environment.newsKey}&q=*`
+  private d = new Date();
+
+  private today = this.d.getDate()  + "-" + (this.d.getMonth()+1) + "-" + this.d.getFullYear()
+  private yesterday = (this.d.getDate()-1 ) + "-" + (this.d.getMonth()+1) + "-" + this.d.getFullYear()
+
+  private apiGeneralFeedUrl: string = `https://newsapi.org/v2/everything?from=${this.yesterday}&to=${this.today}&sortBy=popularity&apiKey=${environment.newsKey}&q=*`
 
   private apiAllSourcesUrl : string = `https://newsapi.org/v2/top-headlines/sources?apiKey=${environment.newsKey}`
 
