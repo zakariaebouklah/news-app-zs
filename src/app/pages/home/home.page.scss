@@ -43,6 +43,15 @@ ion-card {
   justify-content: space-evenly;
   padding: 150px 100px;
   align-items: center;
+  width: 1000px;
+  transition-duration: 500ms;
+  transition-delay: 10ms;
+  transition-timing-function: ease-in-out;
+}
+
+ion-card:hover {
+  width: 1100px;
+  margin-bottom: 5px;
 }
 
 .head-trend{
