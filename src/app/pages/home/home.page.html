@@ -91,7 +91,7 @@
           <ion-card-content>
             <div>
               <p>{{trend.source.name}}</p>
-              <p>{{trend.publishedAt}}</p>
+              <p>{{trend.publishedAt | date}}</p>
             </div>
             <div style="display: flex; justify-content: flex-end;">
               <p><a [href]="trend.url" target="_blank">Read More...</a></p>
