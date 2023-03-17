@@ -16,7 +16,15 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import { environment } from 'src/environments/environment';
+
+/**
+ * importing lord-icons tools
+ */
+
+import { defineElement } from "lord-icon-element";
+import lottie from 'lottie-web';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,9 +35,14 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AngularFirestoreModule,
     HttpClientModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {
+    defineElement(lottie.loadAnimation);
+  }
+}

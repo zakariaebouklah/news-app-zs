@@ -15,6 +15,14 @@
 
     <div class="container" [ngClass]="'rnd-everything'">
       <ion-card *ngFor="let article of randomArticles">
+        <lord-icon (click)="handleSave()"
+          src="https://cdn.lordicon.com/ejxwvtlg.json"
+          trigger="hover"
+          colors="outline:#121331,primary:#021639,secondary:#16c72e"
+          style="width:250px;height:250px"
+          title="Save article"
+        >
+        </lord-icon>
         <img
           alt="Silhouette of mountains"
           [src]="article.urlToImage" height="200px" width="500px"/>
