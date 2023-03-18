@@ -11,7 +11,9 @@ export class StateService {
 
   handleAuthStateChanged(): void
   {
+    // console.log(this.ngFireAuth.currentUser)
     this.ngFireAuth.onAuthStateChanged((user) => {
+      console.log(user)
       if(user === null)
       {
         this.router.navigateByUrl('login').then(() => console.log("Make sure you're logged in..."))

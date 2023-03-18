@@ -14,15 +14,18 @@
     <h3>World Wide News 🌍</h3>
 
     <div class="container" [ngClass]="'rnd-everything'">
-      <ion-card *ngFor="let article of randomArticles">
-        <lord-icon (click)="handleSave()"
-          src="https://cdn.lordicon.com/ejxwvtlg.json"
-          trigger="hover"
-          colors="outline:#121331,primary:#021639,secondary:#16c72e"
-          style="width:250px;height:250px"
-          title="Save article"
+      <ion-card *ngFor="let article of randomArticles; let i = index;">
+
+        <lord-icon (click)="handleSave(article, $event)"
+                   src="https://cdn.lordicon.com/ejxwvtlg.json"
+                   trigger="hover"
+                   colors="outline:#121331,primary:#021639,secondary:#16c72e"
+                   style="width:250px;height:250px"
+                   title="Save article"
+                   *ngIf="!articlesExistsInSaves[i]"
         >
         </lord-icon>
+
         <img
           alt="Silhouette of mountains"
           [src]="article.urlToImage" height="200px" width="500px"/>
@@ -34,6 +37,7 @@
 
           <ion-card-content>
             <div>{{article.description}}</div>
+            <div style="color: #a7b7d6; font-weight: bold; font-size: 20px;">{{article.source.name}}</div>
             <a [href]="article.url" target="_blank">Read More...</a>
           </ion-card-content>
         </div>
