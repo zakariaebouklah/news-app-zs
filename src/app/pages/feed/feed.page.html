@@ -8,5 +8,77 @@
 </ion-header>
 
 <ion-content>
+  <form class="form" (ngSubmit)="handleSubmit()">
+    <div class="search">
+      <button type="submit">
+        <lord-icon
+          src="https://cdn.lordicon.com/osbjlbsb.json"
+          trigger="hover"
+          colors="outline:#121331,secondary:#b26836,secondary2:#54b862,quaternary:#ebe6ef"
+          style="width:40px;height:40px">
+        </lord-icon>
+      </button>
+      <input class="input" placeholder="Search a topic..." required type="text" name="search-input" [(ngModel)]="query">
+      <button class="reset" type="reset">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div class="options">
+      <input [min]="minDate" [max]="maxDate" (change)="validateDate()" [(ngModel)]="fromDate" type="date" class="faking" placeholder="From" name="from" id="from" required>
+      <input [min]="minDate" [max]="maxDate" (change)="validateDate()" [(ngModel)]="toDate" type="date" class="faking" placeholder="To" name="to" id="to" required>
+      <select name="dd" id="dropdown" [(ngModel)]="sortMethod" (change)="handleSortChange()">
+        <option value="relevant">Relevant</option>
+        <option value="popularity">Popularity</option>
+        <option value="publishedAt">Published At</option>
+      </select>
+    </div>
+  </form>
+
+  <div class="body">
+    <ion-grid>
+      <ion-row>
+        <ion-card *ngFor="let article of feedArticles; let i = index;">
+          <img
+            alt="Silhouette of mountains"
+            [src]="article.urlToImage" height="200px" width="500px"/>
+          <div>
+            <ion-card-header>
+              <ion-card-title>{{article.title}}</ion-card-title>
+              <ion-card-subtitle>{{article.author}}</ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content>
+              <div>{{article.description}}</div>
+              <div style="color: #a7b7d6; font-weight: bold; font-size: 20px;">{{article.source.name}}</div>
+              <a [href]="article.url" target="_blank">Read More...</a>
+            </ion-card-content>
+          </div>
+        </ion-card>
+        <ion-card *ngFor="let article of feedArticles; let i = index;">
+          <img
+            alt="Silhouette of mountains"
+            [src]="article.urlToImage" height="200px" width="500px"/>
+          <div>
+            <ion-card-header>
+              <ion-card-title>{{article.title}}</ion-card-title>
+              <ion-card-subtitle>{{article.author}}</ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content>
+              <div>{{article.description}}</div>
+              <div style="color: #a7b7d6; font-weight: bold; font-size: 20px;">{{article.source.name}}</div>
+              <a [href]="article.url" target="_blank">Read More...</a>
+            </ion-card-content>
+          </div>
+        </ion-card>
+      </ion-row>
+    </ion-grid>
+  </div>
 
 </ion-content>
