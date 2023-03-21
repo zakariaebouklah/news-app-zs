@@ -21,8 +21,11 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "@ionic/angular": "^6.1.9",
+    "dotenv": "^16.0.3",
     "firebase": "^9.17.2",
     "ionicons": "^6.0.3",
+    "lord-icon-element": "^4.0.3",
+    "lottie-web": "^5.10.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
