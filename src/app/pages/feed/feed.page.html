@@ -18,7 +18,7 @@
           style="width:40px;height:40px">
         </lord-icon>
       </button>
-      <input class="input" placeholder="Search a topic..." required type="text" name="search-input" [(ngModel)]="query">
+      <input class="input" placeholder="Search a topic..." required="true" type="text" name="search-input" [(ngModel)]="query">
       <button class="reset" type="reset">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path
@@ -41,6 +41,15 @@
   </form>
 
   <div class="body">
+    <ion-card *ngIf="feedArticles.length === 0">
+      <ion-card-header>
+        <ion-card-title>No articles or posts found for this topic...</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Try providing another convenient topic...
+      </ion-card-content>
+    </ion-card>
     <ion-grid>
       <ion-row>
         <ion-card *ngFor="let article of feedArticles; let i = index;">

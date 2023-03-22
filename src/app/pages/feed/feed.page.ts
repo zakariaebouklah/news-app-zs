@@ -67,6 +67,11 @@ export class FeedPage implements OnInit {
 
   handleSubmit(): void
   {
+    if(this.query == null || this.toDate == '' || this.fromDate == '')
+    {
+      alert("You must fill every field available");
+      return ;
+    }
     // @ts-ignore
     this.feedService.handleNewUserChoices({q :this.query, from: this.fromDate, to: this.fromDate, sort: this.sortMethod}).subscribe(({articles}) => {
       console.log(articles)
