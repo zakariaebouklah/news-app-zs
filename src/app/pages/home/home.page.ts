@@ -68,7 +68,7 @@ export class HomePage implements OnInit {
 
   }
 
-  handleChanges()
+  handleChanges(): void
   {
     // @ts-ignore
     this.homeService.getTrendsAfterChanges(this.country).subscribe(({articles}) => {
@@ -77,7 +77,7 @@ export class HomePage implements OnInit {
     })
   }
 
-  handleSave(article: Article, event : Event)
+  handleSave(article: Article, event : Event): void
   {
     this.addService.addNewPostToCollection(article);
     // @ts-ignore
