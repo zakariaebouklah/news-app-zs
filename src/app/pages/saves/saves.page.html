@@ -8,5 +8,42 @@
 </ion-header>
 
 <ion-content>
+  <div class="body">
 
+    <ion-card *ngFor="let article of saves; let i = index;">
+
+      <ion-card *ngIf="saves.length === 0">
+        <ion-card-header>
+          <ion-card-title>No articles or posts found...</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          Your save is empty...
+        </ion-card-content>
+      </ion-card>
+
+      <img
+        alt="Silhouette of mountains"
+        [src]="article.image" height="200px" width="500px"/>
+      <div>
+        <ion-card-header>
+          <ion-card-title>{{article.title}}</ion-card-title>
+          <ion-card-subtitle>{{article.author}}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <div>{{article.description}}</div>
+          <a [href]="article.url" target="_blank">Read More...</a>
+        </ion-card-content>
+      </div>
+      <lord-icon
+        (click)="handleRemove(article, $event)"
+        src="https://cdn.lordicon.com/ricosjfq.json"
+        trigger="hover"
+        colors="outline:#121331,primary:#c71f16,secondary:#16c72e"
+        style="width:50px;height:50px"
+        title="Remove from saves">
+      </lord-icon>
+    </ion-card>
+  </div>
 </ion-content>
