@@ -24,6 +24,8 @@ export class HomePage implements OnInit {
   country: string = this.homeService.country
   trends: Trend[] = []
 
+  isAdded: boolean = false;
+
   constructor(
     public logoutService: LogoutService,
     private stateService: StateService,
@@ -79,6 +81,7 @@ export class HomePage implements OnInit {
 
   handleSave(article: Article, event : Event): void
   {
+    this.isAdded = true;
     this.addService.addNewPostToCollection(article);
     // @ts-ignore
     console.log("handleSave")

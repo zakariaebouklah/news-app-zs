@@ -16,15 +16,17 @@
     <div class="container" [ngClass]="'rnd-everything'">
       <ion-card *ngFor="let article of randomArticles; let i = index;">
 
-        <lord-icon (click)="handleSave(article, $event)"
-                   src="https://cdn.lordicon.com/ejxwvtlg.json"
-                   trigger="hover"
-                   colors="outline:#121331,primary:#021639,secondary:#16c72e"
-                   style="width:250px;height:250px"
-                   title="Save article"
-                   *ngIf="!articlesExistsInSaves[i]"
-        >
-        </lord-icon>
+        <div *ngIf="!isAdded">
+          <lord-icon (click)="handleSave(article, $event)"
+                     src="https://cdn.lordicon.com/ejxwvtlg.json"
+                     trigger="hover"
+                     colors="outline:#121331,primary:#021639,secondary:#16c72e"
+                     style="width:50px;height:50px"
+                     title="Save article"
+                     *ngIf="!articlesExistsInSaves[i]"
+          >
+          </lord-icon>
+        </div>
 
         <img
           alt="Silhouette of mountains"
