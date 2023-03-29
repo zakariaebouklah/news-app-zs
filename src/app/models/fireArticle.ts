@@ -3,5 +3,6 @@ export interface FireArticle {
   author: string,
   description: string,
   url: string,
-  image: string
+  image: string,
+  docId: string
 }
