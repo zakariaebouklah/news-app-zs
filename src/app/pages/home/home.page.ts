@@ -55,6 +55,7 @@ export class HomePage implements OnInit {
       });
 
       console.log('articles length:', this.randomArticles.length);
+      console.log('articles :', this.randomArticles);
 
     })
 
