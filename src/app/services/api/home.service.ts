@@ -10,7 +10,7 @@ export class HomeService {
 
   private d: Date = new Date();
 
-  private today: string = this.d.getDate()  + "-" + (this.d.getMonth()+1) + "-" + this.d.getFullYear();
+  private today: string = this.d.getFullYear()  + "-" + (this.d.getMonth()+1) + "-" + this.d.getDate();
   // private yesterday = (this.d.getDate()-1 ) + "-" + (this.d.getMonth()+1) + "-" + this.d.getFullYear()
 
   private apiGeneralFeedUrl: string = `https://newsapi.org/v2/everything?from=${this.getYesterdayDate(new Date())}&to=${this.today}&sortBy=popularity&apiKey=${environment.newsKey}&q=*`
@@ -26,7 +26,7 @@ export class HomeService {
   {
     const previous = new Date(d.getTime());
     previous.setDate(d.getDate() - 1)
-    return previous.getDate() + "-" + (previous.getMonth() + 1) + "-" + previous.getFullYear();
+    return previous.getFullYear() + "-" + (previous.getMonth() + 1) + "-" + previous.getDate();
   }
 
   getGeneralFeed(): Observable<object>
