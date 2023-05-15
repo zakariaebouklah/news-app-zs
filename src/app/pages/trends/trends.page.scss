@@ -1,0 +1,22 @@
+.container {
+  margin: 35px 45px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 35px 0px;
+}
+.card{
+  display: flex;
+}
+
+h3 {
+  margin: 10px 45px;
+}

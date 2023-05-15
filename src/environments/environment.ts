@@ -12,7 +12,7 @@ export const environment = {
     messagingSenderId: process.env.NG_APP_MESSAGING_ID,
     appId: process.env.NG_APP_APP_ID
   },
-  newsKey: process.env.NG_APP_NEWS_KEY
+  newsKey: "bcb912fb45a943778bee915b272b7e1a"
 };
 
 /*
