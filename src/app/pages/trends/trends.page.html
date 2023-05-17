@@ -8,5 +8,38 @@
 </ion-header>
 
 <ion-content>
+  <div class="wrapper">
+    <h3 class="title">Trending 🔥</h3>
+    <div *ngFor="let article of trends">
+      <ion-card class="card">
+        <img [src]="article.urlToImage" height="200px" width="350px" alt="picsum">
+        <div>
+          <ion-card-header>
+            <ion-card-title>
+              {{
+                article.title
+              }}
+            </ion-card-title>
+            <ion-card-subtitle *ngIf="article.author">{{
+              article["author"]
+            }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <div>
+              {{
+                article["description"]
+              }}
+            </div>
+            <div>
+              {{
+                article["source"]["name"]
+              }}
+            </div>
+            <a [href]="article.url" target="_blank">read more</a>
+          </ion-card-content>
+        </div>
+      </ion-card>
 
+    </div>
+  </div>
 </ion-content>
